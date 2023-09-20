@@ -7,15 +7,12 @@ import {useSelector} from 'react-redux'
 function App() {
   const loginValue = useSelector(state=>state.loginCredentials.value) ;
   const navigate = useNavigate();
-  const [flag, setFlag] = useState(false);
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState({
     Email: "",
     password: "",
   });
-  const [click, setClick] = useState({
-    type: "",
-  });
+ 
 
   useEffect(()=>{
     if(!loginValue){
@@ -30,10 +27,8 @@ function App() {
     });
   };
 
-  const submit = async(e) => {
+  const submit = (e) => {
     e.preventDefault();
-    setFlag(true);
-
       dispatch(login({inputValue}))
       navigate("/dashboard");
       
@@ -53,7 +48,6 @@ function App() {
             value={inputValue.Email}
             className="form-controlInput"
             onChange={handleChange}
-            onClick={() => setClick({ type: "Email" })}
             placeholder="Email address"
           />
           <br />
@@ -66,7 +60,6 @@ function App() {
             onChange={handleChange}
             placeholder="password"
             required
-            onClick={() => setClick({ type: "pass" })}
           />
           <br></br>
           <br></br>

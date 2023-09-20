@@ -59,7 +59,7 @@ function Dashboard() {
     }
   };
 
-  const submit =async (e) => {
+  const submit =(e) => {
     e.preventDefault();
     getlatlog();
     setFlag(true);
