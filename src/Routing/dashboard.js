@@ -30,7 +30,6 @@ function Dashboard() {
             latitude: response.data.coord.lat,
           };
           setCoord(newCorrd);
-          console.log("001", coord);
           if (newCorrd.latitude !== null && newCorrd.longitude !== null) {
             axios
               .get(
@@ -45,7 +44,6 @@ function Dashboard() {
                   weatherDetails.temperature = Math.ceil(KelvinToCelcius);
                   weatherDetails.climate = response.data.weather[0].main;
                   setWeather((previous) => [...previous, weatherDetails]);
-                  console.log("weatherDetails",weatherDetails);
                   dispatch(weatherCheck({weatherDetails}))
                 
                   setFlag(true)
@@ -64,8 +62,7 @@ function Dashboard() {
   const submit =async (e) => {
     e.preventDefault();
     getlatlog();
-    // setFlag(true);
-    console.log('wet',weather)
+    setFlag(true);
    
     
 };

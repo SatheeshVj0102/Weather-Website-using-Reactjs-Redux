@@ -1,18 +1,8 @@
-import React, { useEffect } from "react";
-import { useNavigate ,useLocation} from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useNavigate} from "react-router-dom";
 
 const Weather = (props) => {
-  const user = useSelector(state=>state.weatherDet.value);
-  const loginCreditenials = useSelector(state=>state.loginCredentials.value);
-  console.log("user",user,loginCreditenials)
-  
   const navigate = useNavigate();
-const weatherData = props.weatherData;
-
-  
-  
-  
+  const weatherData = props.weatherData;
 
   return (
       <div>
@@ -30,7 +20,6 @@ const weatherData = props.weatherData;
             </tr>
           </thead>
           <tbody>
-            {/* {weatherData.weatherData.map((data, index) => ( */}
                 {props.weatherData.map((data, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>

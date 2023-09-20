@@ -12,7 +12,6 @@ const store = configureStore({
   reducer: {
     weatherDet :weatherCheck,
     loginCredentials:login
-    
   },
 });
 
@@ -23,8 +22,6 @@ function AppRouter() {
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/dashboard" element={<Dashboard />} />
-
-          {/* <Route path="/weather" element={<Weather />} /> */}
         </Routes>
       </Router>
     </Provider>
